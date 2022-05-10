@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-        <title>Search jobs</title>
-    </head>
-    <body>
-    
-    </body>
+  <head>
+    <title>IT Jobs</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav__bar">
+        <img src="assets/log.jpg" />
+        <h3>IT Jobs</h3>
+        <div class="nav__bar--buttons">
+          <a href="#">Home</a>
+          <a href="#">Create job</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="main">
+      <div class="select__search">
+        <select>
+          <option id="location">Location</option>
+        </select>
+        <select>
+          <option id="seniority">Seniority</option>
+        </select>
+        <select>
+          <option id="category">Category</option>
+        </select>
+
+        <button id="btn-search">Search</button>
+        <button id="btn-clean">Clear</button>
+      </div>
+    </section>
+    <div class="div-loader">
+      <span class="loader"></span>
+    </div>
+    <div class="container__cards"></div>
+  </body>
 </html>

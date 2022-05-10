@@ -1,0 +1,94 @@
+.nav__bar {
+  background-color: #502f4c;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nav__bar img {
+  height: 80px;
+  border-radius: 50%;
+}
+.nav__bar h3 {
+  font-size: 30px;
+  margin: 10px;
+}
+
+.nav__bar--buttons {
+  position: absolute;
+  left: 80%;
+}
+.nav__bar--buttons a {
+  text-decoration: none;
+  color: #c8b8db;
+  margin: 5px;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+.main select {
+  width: 200px;
+  height: 25px;
+}
+
+button {
+  width: 70px;
+  height: 30px;
+  background-color: #70587c;
+  border: #c8b8db 1px solid;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #c8b8db;
+}
+
+.loader {
+  color: #502f4c;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%, 100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

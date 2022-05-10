@@ -1,0 +1,10 @@
+button{
+    width: 70px;
+    height: 30px;
+    background-color: $botton_hover;
+    border: $link_color 1px solid;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: $link_color;
+}
