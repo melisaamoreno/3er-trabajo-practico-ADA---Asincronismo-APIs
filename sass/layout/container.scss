@@ -1,0 +1,6 @@
+.container__cards {
+    @include flex_display($direction: row, $alignment: center);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
