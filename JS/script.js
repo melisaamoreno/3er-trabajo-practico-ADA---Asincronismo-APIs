@@ -17,11 +17,9 @@ const showJobs = (jobs) => {
         <div class="card">
         <h3>${name}</h3>
         <p>${description}</p>
-        <button id="details"> See details </button>
+        <button id="details" class="btn-details"> See details </button>
+        <div class="span-card"><span>${location}</span><span>${category}</span><span>${seniority}</span></div>
         
-        <span>${location}</span>
-        <span>${category}</span>
-        <span>${seniority}</span>
       </div>`
     }
     queryId('loader').style.display = "none"

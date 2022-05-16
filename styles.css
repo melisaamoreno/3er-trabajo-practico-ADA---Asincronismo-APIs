@@ -52,6 +52,13 @@ button:hover {
   background-color: #c8b8db;
 }
 
+.btn-details {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
 .container__cards {
   display: flex;
   flex-direction: row;
@@ -65,7 +72,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 300px;
   margin: 10px;
   padding: 15px;
   background-color: #c8b8db;
@@ -76,6 +82,7 @@ button:hover {
 .card p {
   margin: 10px;
   font-size: 15px;
+  font-family: verdana;
 }
 .card .loader {
   margin: 5px;
@@ -85,12 +92,28 @@ button:hover {
   border-radius: 5px;
 }
 .card span {
+  width: 110px;
+  text-align: center;
   margin: 10px;
   background-color: #70587c;
   padding: 3px;
   border-radius: 5px;
   border: 1px solid black;
   cursor: pointer;
+}
+.card .span-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+footer {
+  text-align: center;
+  background-color: #502f4c;
+  color: white;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */

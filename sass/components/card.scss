@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 300px;
     margin: 10px;
     padding: 15px;
     background-color: $link_color ;
@@ -12,6 +11,7 @@
     p{
         margin: 10px;
         font-size: 15px;
+        font-family: $font_cards
     }
     .loader{
         margin: 5px;
@@ -22,12 +22,18 @@
     }
 
     span{
+        width: 110px;      
+        text-align: center;
         margin: 10px;
         background-color:$botton_hover;
         padding: 3px;
         border-radius: 5px;
         border: 1px solid black;
         cursor: pointer;
-
+    }
+    .span-card{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
     }
 }

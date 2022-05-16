@@ -8,3 +8,10 @@ button{
 button:hover{
     background-color: $link_color;
 }
+
+.btn-details{
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid $font_color;
+    cursor: pointer;
+}
