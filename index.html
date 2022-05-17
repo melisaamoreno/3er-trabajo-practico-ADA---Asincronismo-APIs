@@ -12,22 +12,22 @@
         <img src="assets/log.jpg" />
         <h3>IT Jobs</h3>
         <div class="nav__bar--buttons">
-          <a href="#">Home</a>
-          <a href="#">Create job</a>
+          <a href="index.html">Home</a>
+          <a href="#" id="createJob-form">Create job</a>
         </div>
       </nav>
     </header>
 
-    <section class="main">
-      <div class="select__search">
-        <select>
-          <option id="location">Location</option>
+    <section class="main" id="main">
+      <div class="select__search" id="select__search">
+        <select id="location">
+          <option>Location</option>
         </select>
-        <select>
-          <option id="seniority">Seniority</option>
+        <select id="seniority">
+          <option>Seniority</option>
         </select>
-        <select>
-          <option id="category">Category</option>
+        <select id="category">
+          <option>Category</option>
         </select>
 
         <button id="btn-search">Search</button>
@@ -37,11 +37,28 @@
       <div class="container__cards" id="container">
         <span class="loader" id="loader">Cargando...</span>
       </div>
+
+      <form id="form">
+        <label>Job title:</label>
+        <input type="text" id="name">
+        <label>Description:</label>
+        <textarea id="description"> </textarea>
+        <label>Knowledge:</label>
+        <input type="text">
+        <div>
+          <label>Tags:</label>
+          <input type="text" id="location-form" placeholder="Location">
+          <input type="text" id="seniority-form" placeholder="Seniority">
+          <input type="text" id="category-form" placeholder="Category">
+        </div>
+        <button type="submit" id="submit">Submit</button>
+      </form>
       
-     <footer>Made by Melisa Moreno - 2022</footer>
-
-
-
+   <footer>Made by Melisa Moreno - 2022</footer>
       <script src="./JS/script.js"></script>
+      <script src="./JS/script2.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     </body>
+   
 </html>

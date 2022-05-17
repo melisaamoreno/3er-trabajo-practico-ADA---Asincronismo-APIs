@@ -1,5 +1,5 @@
 .nav__bar {
-  background-color: #502f4c;
+  background-color: #202020;
   padding: 20px 20px;
   display: flex;
   flex-direction: row;
@@ -12,6 +12,7 @@
 .nav__bar h3 {
   font-size: 30px;
   margin: 10px;
+  color: #d6d6d6;
 }
 
 .nav__bar--buttons {
@@ -20,14 +21,14 @@
 }
 .nav__bar--buttons a {
   text-decoration: none;
-  color: #c8b8db;
+  color: #d6d6d6;
   margin: 5px;
 }
 
 * {
   padding: 0px;
   margin: 0px;
-  font-family: courier new;
+  font-family: verdana;
 }
 
 .main {
@@ -43,20 +44,42 @@
 button {
   width: 70px;
   height: 30px;
-  background-color: #70587c;
-  border: #c8b8db 1px solid;
+  background-color: #ffee32;
+  border: #d6d6d6 1px solid;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: #c8b8db;
+  background-color: #d6d6d6;
 }
 
 .btn-details {
   width: 80%;
   margin: 0 auto;
-  border: 1px solid #000000;
+  border: 1px solid #202020;
   cursor: pointer;
+}
+
+.btn-details:hover {
+  background-color: #ffd100;
+}
+
+.btn-card_detail {
+  display: flex;
+}
+.btn-card_detail .btn_card {
+  width: 150px;
+  height: 30px;
+  margin: 10px 5px;
+}
+.btn-card_detail .btn_card:hover {
+  background-color: #ffd100;
+}
+.btn-card_detail .delete {
+  background-color: #ee2e31;
+}
+.btn-card_detail .delete:hover {
+  background-color: #ff3c38;
 }
 
 .container__cards {
@@ -72,34 +95,31 @@ button:hover {
   display: flex;
   flex-direction: column;
   width: 500px;
+  height: 300px;
   margin: 10px;
   padding: 15px;
-  background-color: #c8b8db;
+  background-color: #d6d6d6;
   border: 1px black solid;
   border-radius: 5px;
   box-sizing: content-box;
 }
+.card span {
+  width: 110px;
+  text-align: center;
+  margin: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
 .card p {
   margin: 10px;
   font-size: 15px;
-  font-family: verdana;
 }
 .card .loader {
   margin: 5px;
   padding: 2px 0px;
-  background-color: #c8b8db;
+  background-color: #d6d6d6;
   border: black 1px solid;
   border-radius: 5px;
-}
-.card span {
-  width: 110px;
-  text-align: center;
-  margin: 10px;
-  background-color: #70587c;
-  padding: 3px;
-  border-radius: 5px;
-  border: 1px solid black;
-  cursor: pointer;
 }
 .card .span-card {
   display: flex;
@@ -107,13 +127,61 @@ button:hover {
   justify-content: center;
 }
 
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 300px;
+  margin: 10px;
+  padding: 15px;
+  background-color: #d6d6d6;
+  border: 1px black solid;
+  border-radius: 5px;
+  box-sizing: content-box;
+  height: fit-content;
+  width: 80%;
+}
+.card-detail span {
+  width: 110px;
+  text-align: center;
+  margin: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.card-detail p {
+  margin: 10px;
+  font-size: 15px;
+}
+
 footer {
   text-align: center;
-  background-color: #502f4c;
+  background-color: #202020;
   color: white;
   padding: 20px;
   position: absolute;
   width: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  justify-content: center;
+  width: 80%;
+  height: fit-content;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+form input {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 30px;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

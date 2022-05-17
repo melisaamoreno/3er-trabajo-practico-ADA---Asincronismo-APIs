@@ -1,17 +1,8 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    margin: 10px;
-    padding: 15px;
-    background-color: $link_color ;
-    border: 1px black solid;
-    border-radius: 5px;
-    box-sizing:content-box;
+   @include card ($direction: column);
     p{
         margin: 10px;
         font-size: 15px;
-        font-family: $font_cards
     }
     .loader{
         margin: 5px;
@@ -20,20 +11,19 @@
         border: black 1px solid;
         border-radius: 5px;
     }
-
-    span{
-        width: 110px;      
-        text-align: center;
-        margin: 10px;
-        background-color:$botton_hover;
-        padding: 3px;
-        border-radius: 5px;
-        border: 1px solid black;
-        cursor: pointer;
-    }
     .span-card{
         display: flex;
         flex-direction: row;
         justify-content:center;
     }
+}
+
+.card-detail{
+  @include card ($direction: column);
+  height:fit-content;
+  width: 80%;
+  p{
+    margin: 10px;
+    font-size: 15px;
+}
 }

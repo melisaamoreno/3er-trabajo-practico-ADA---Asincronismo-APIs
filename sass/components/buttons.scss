@@ -1,17 +1,44 @@
-button{
-    width: 70px;
-    height: 30px;
-    background-color: $botton_hover;
-    border: $link_color 1px solid;
-    border-radius: 5px;
-}
-button:hover{
-    background-color: $link_color;
+button {
+  width: 70px;
+  height: 30px;
+  background-color: $botton_hover;
+  border: $link_color 1px solid;
+  border-radius: 5px;
 }
 
-.btn-details{
-    width: 80%;
-    margin: 0 auto;
-    border: 1px solid $font_color;
-    cursor: pointer;
+button:hover {
+  background-color: $link_color;
+}
+
+.btn-details {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid $navbar_color;
+  cursor: pointer;
+}
+
+.btn-details:hover {
+  background-color: $font_color;
+}
+
+.btn-card_detail {
+  display: flex;
+
+  .btn_card {
+    width: 150px;
+    height: 30px;
+    margin: 10px 5px;
+  }
+
+  .btn_card:hover {
+    background-color: $font_color;
+  }
+
+  .delete {
+    background-color: #ee2e31;
+  }
+
+  .delete:hover {
+    background-color: #ff3c38;
+  }
 }
