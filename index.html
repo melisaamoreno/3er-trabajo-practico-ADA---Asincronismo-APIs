@@ -4,7 +4,7 @@
     <title>IT Jobs</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -36,24 +36,26 @@
     </section>
       <div class="container__cards" id="container">
         <span class="loader" id="loader">Cargando...</span>
-      </div>
-
-      <form id="form">
+      </div>   
+      
+   
+      <form id="form">   
         <label>Job title:</label>
         <input type="text" id="name">
         <label>Description:</label>
         <textarea id="description"> </textarea>
-        <label>Knowledge:</label>
-        <input type="text">
         <div>
           <label>Tags:</label>
           <input type="text" id="location-form" placeholder="Location">
           <input type="text" id="seniority-form" placeholder="Seniority">
           <input type="text" id="category-form" placeholder="Category">
         </div>
+        <div class="btn-form">
         <button type="submit" id="submit">Submit</button>
+         <button><a href="index.html">Cancel</a></button>
+        </div>
       </form>
-      
+
    <footer>Made by Melisa Moreno - 2022</footer>
       <script src="./JS/script.js"></script>
       <script src="./JS/script2.js"></script>

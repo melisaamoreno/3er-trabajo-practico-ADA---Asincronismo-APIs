@@ -102,6 +102,7 @@ button:hover {
   border: 1px black solid;
   border-radius: 5px;
   box-sizing: content-box;
+  overflow: auto;
 }
 .card span {
   width: 110px;
@@ -182,6 +183,15 @@ form input {
   align-items: center;
   margin: 0 auto;
   margin-top: 10px;
+}
+form button {
+  margin: 5px;
+}
+
+.btn-form {
+  display: flex;
+  padding: 10px;
+  justify-content: right;
 }
 
 /*# sourceMappingURL=styles.css.map */

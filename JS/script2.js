@@ -50,3 +50,13 @@ const selectSeniority = () => {
   }
 };
 selectSeniority();
+
+const filterResults = () => {
+    let searching = {
+        location: queryId('location').value,
+        seniority: queryId('seniority').value,
+        category: queryId('category').value
+    }
+    console.log(searching);
+}
+queryId('btn-search').addEventListener('click', filterResults)

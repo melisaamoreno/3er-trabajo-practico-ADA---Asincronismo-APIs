@@ -1,5 +1,6 @@
 .card {
    @include card ($direction: column);
+   overflow:auto;
     p{
         margin: 10px;
         font-size: 15px;

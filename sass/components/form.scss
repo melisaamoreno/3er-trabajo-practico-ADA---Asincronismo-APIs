@@ -18,9 +18,16 @@ form {
     align-items: center;
     margin: 0 auto;
     margin-top: 10px;
+    }
+    button{
+        margin: 5px;
+    }
+}
 
-}}
-
-
+  .btn-form{
+        display: flex;
+        padding: 10px;
+        justify-content: right;
+    }
 
 
