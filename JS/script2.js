@@ -51,6 +51,13 @@ const selectSeniority = () => {
 };
 selectSeniority();
 
+
+queryId('btn-clear').addEventListener('click', () =>{
+    queryId('location').value= ""
+    queryId('seniority').value = ""
+    queryId('category').value = ""
+})
+
 const filterResults = () => {
     let searching = {
         location: queryId('location').value,
@@ -60,3 +67,15 @@ const filterResults = () => {
     console.log(searching);
 }
 queryId('btn-search').addEventListener('click', filterResults)
+
+/*const filterDevelopers = () => {
+  fetch('https://627448703d2b5100742a6b67.mockapi.io/jobs?category=Development')
+    .then (res => res.json())
+    .then (data => console.log(data))
+    .catch(err => console.log(err))
+}
+
+queryId('btn-search').addEventListener('click', () => {
+if ()
+})
+*/

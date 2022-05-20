@@ -11,10 +11,12 @@ button:hover {
 }
 
 .btn-details {
-  width: 80%;
-  margin: 0 auto;
+  width: 60%;
+  margin: auto;
   border: 1px solid $navbar_color;
   cursor: pointer;
+  border-radius: 20px;
+
 }
 
 .btn-details:hover {

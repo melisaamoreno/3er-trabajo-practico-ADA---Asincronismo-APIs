@@ -35,7 +35,7 @@ const getDataJobs = (id) => {
 }
 
 const editJob = (id) => {
-  fetch(console.log(`${URL_BASE}/${id}`), {
+ console.log(fetch(`${URL_BASE}/${id}`), {
     method: 'PUT',
     headers: {
       "Content-Type": "Application/json",
@@ -45,7 +45,6 @@ const editJob = (id) => {
   .then(res => console.log(res.json()))
   .catch(err => console.log(err))
 }
-
 
 const deleteJob = (id) => {
   fetch(`${URL_BASE}/${id}`, {
@@ -101,10 +100,14 @@ const saveData = () => {
 
 const showAlert = (id) => {
   queryId("container").innerHTML = `
+  <div class="alert-container">
   <div class="alert">
       Are you sure?
-      <button class="btn btn-danger" onclick="deleteJob(${id})">Delete</button>
-      <a href="index.html" class="btn btn-secondary">Cancel</a>
+      <div class="btn-form">
+      <button class="btn-delete" onclick="deleteJob(${id})">Delete</button>
+      <a href="index.html" class="btn-delete">Cancel</a>
+      </div>
+  </div>
   </div>
 `
 }
@@ -133,7 +136,7 @@ const editForm = (id) => {
     <input type="text" id="category-form" placeholder="Category">
   </div>
   <div class="btn-form">
-  <button type="submit" id="edit" onclick="editJob(${id})">Edit</button>
+  <button type="submit" id="edit-form" onclick="editJob(${id})">Edit</button>
    <button><a href="index.html">Cancel</a></button>
   </div>
 </form>`
