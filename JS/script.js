@@ -103,8 +103,8 @@ const showAlert = (id) => {
   queryId("container").innerHTML = `
   <div class="alert">
       Are you sure?
-      <button class="btn btn-danger" onclick="deleteJob(${id})">Delete</button>
-      <a href="index.html" class="btn btn-secondary">Cancel</a>
+      <button onclick="deleteJob(${id})">Delete</button>
+      <button <a href="index.html">Cancel</a></button>
   </div>
 `
 }
