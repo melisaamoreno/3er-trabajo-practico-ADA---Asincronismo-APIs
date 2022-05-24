@@ -8,17 +8,16 @@
 @mixin card ($direction: column){
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 300px;
-    margin: 10px;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
     padding: 15px;
-    background-color: $link_color ;
-    border: 1px black solid;
-    border-radius: 5px;
+    background-color: rgb(240, 238, 238)  ;
+    border-radius: 10px;
     box-sizing:content-box;
+    filter: drop-shadow(-1px 0px 5px #868585);
 
     span{
-        width: 110px;      
         text-align: center;
         margin: 5px;
         font-size: 12px;

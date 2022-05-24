@@ -5,29 +5,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
       <nav class="nav__bar">
-        <img src="assets/log.jpg" />
-        <h3>IT Jobs</h3>
+        <h1>IT Jobs</h1>
         <div class="nav__bar--buttons">
           <a href="index.html">Home</a>
           <a href="#" id="createJob-form">Create job</a>
         </div>
       </nav>
     </header>
+    <section class="welcome" id="welcome">
+      <h1>Find your next job  here</h1>
+      
+      <img src="assets\undraw_programmer_re_owql.svg">
+    </section>
 
     <section class="main" id="main">
       <div class="select__search" id="select__search">
         <select id="location">
-          <option>Location</option>
+          <option label="Location"></option>
+          <option value="United States">United States</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Germany">Germany</option>
+          <option value="Spain">Spain</option>
+          <option value="New Zealand">New Zealand</option>
+          <option value="Australia">Australia</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Switzerland">Switzerland</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="Brasil">Brasil</option>
+          <option value="England">England</option>
+          <option value="Canada">Canada</option>
         </select>
         <select id="seniority">
-          <option>Seniority</option>
+          <option label="Seniority"></option>
+          <option value="Development">Development</option>
+          <option value="Software Engineers">Software Engineers</option>
+          <option value="Engineer">Engineer</option>
+          <option value="service">service</option>
+          <option value="Designer">Designer</option>
+          <option value="Support">Support</option>
         </select>
         <select id="category">
-          <option>Category</option>
+          <option label="Category"></option>
+          <option value="Junior">Junior</option>
+          <option value="Srr">Ssr</option>
+          <option value="Senior">Senior</option>
         </select>
 
         <button id="btn-search">Search</button>
@@ -52,15 +78,14 @@
         </div>
         <div class="btn-form">
         <button type="submit" id="submit">Submit</button>
+        <button type="submit" class="edit" id="edit">Edit</button>
          <button><a href="index.html">Cancel</a></button>
         </div>
       </form>
 
    <footer>Made by Melisa Moreno - 2022</footer>
       <script src="./JS/script.js"></script>
-      <script src="./JS/script2.js"></script>
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
     </body>
    
 </html>

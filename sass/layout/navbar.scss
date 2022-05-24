@@ -1,25 +1,24 @@
-.nav__bar{
-    background-color: $navbar_color;
-    padding: 20px 20px;
-    @include flex_display($direction: row, $alignment: center);
+.nav__bar {
+  background-color: $navbar_color;
+  padding: 20px 20px;
+  @include flex_display($direction: row, $alignment: center);
+  width: 100%;
 
-    img{
-        height: 80px;
-        border-radius: 50%;
-    }
-
-    h3 {
-        font-size: $title_log;
-        margin: 10px;
-        color: $link_color;
-    }
+  h1 {
+    font-size: $title_log;
+    margin-left: 50px;
+    color: $titles_color;
+  }
 }
-.nav__bar--buttons{
-    position: absolute;
-    left: 80%;
-    a{
-        text-decoration: none;
-        color: $link_color;
-        margin: 5px;
-    }
+
+.nav__bar--buttons {
+  position: absolute;
+  left: 80%;
+
+  a {
+    text-decoration: none;
+    color: $titles_color;
+    margin: 15px;
+    font-size: 20px;
+  }
 }

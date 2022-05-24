@@ -1,5 +1,6 @@
 const URL_BASE = "https://627448703d2b5100742a6b67.mockapi.io/jobs";
 const queryId = (id) => document.getElementById(id);
+let editId = 0
 
 const getJobs = () => {
   fetch(`${URL_BASE}`)
@@ -34,18 +35,6 @@ const getDataJobs = (id) => {
       .catch(err => console.log(err))
 }
 
-const editJob = (id) => {
-  fetch(console.log(`${URL_BASE}/${id}`), {
-    method: 'PUT',
-    headers: {
-      "Content-Type": "Application/json",
-    },
-    body: JSON.stringify(saveData())
-  })
-  .then(res => console.log(res.json()))
-  .catch(err => console.log(err))
-}
-
 
 const deleteJob = (id) => {
   fetch(`${URL_BASE}/${id}`, {
@@ -57,14 +46,17 @@ const deleteJob = (id) => {
 
 const showJobs = (jobs) => {
   for (const job of jobs) {
-    const { id, name, description, category, location, seniority } = job
+    const { id, name, description, category, location, seniority } = job;
     queryId("container").innerHTML += `
         <div class="card">
         <h3>${name}</h3>
         <p>${description}</p>
-        <div class="span-card"><span>${location}</span><span>${category}</span><span>${seniority}</span></div>
+        <div class="span-card">
+           <span>${location}</span><span>${category}</span><span>${seniority}</span>
+        </div>
+        <div class="details-button">
         <button id="details" class="btn-details" onclick="getOneJob(${id})"> See details </button>
-        
+        </div>
       </div>`;
   }
   queryId("loader").style.display = "none";
@@ -81,7 +73,7 @@ const showOneJob = (jobs) => {
            <span>${location}</span><span>${category}</span><span>${seniority}</span>
         </div>
         <div class="btn-card_detail">
-        <button class="btn_card" id="edit" onclick="editForm(${id})">Edit job</button>
+        <button class="btn_card" onclick="editForm(${id})">Edit job</button>
         <button class="btn_card delete" id="delete" onclick="showAlert(${id})">Delete job</button>
         </div>
    </div>
@@ -101,13 +93,39 @@ const saveData = () => {
 
 const showAlert = (id) => {
   queryId("container").innerHTML = `
+  <div class="alert-container">
   <div class="alert">
       Are you sure?
+      <div class="btn-form">
       <button onclick="deleteJob(${id})">Delete</button>
-      <button <a href="index.html">Cancel</a></button>
+      <button><a href="index.html">Cancel</a></button>
+      </div>
+  </div>
   </div>
 `
 }
+
+const editForm = (id) => {
+getDataJobs(id)
+queryId('form').style.display='block'
+queryId('submit').style.display='none'
+queryId('edit').style.display='block'
+editId = id
+}
+
+queryId('edit').addEventListener('click', (e) => {
+  e.preventDefault()
+    fetch(`${URL_BASE}/${editId}`, {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(saveData())
+    })
+    .then(res => console.log(res.json()))
+    .catch(err => console.log(err))
+  }
+)
 
 const populateCardJob = (job) => {
   const { name, description, location, category, seniority } = job
@@ -118,35 +136,13 @@ const populateCardJob = (job) => {
   queryId("seniority-form").value = seniority 
 }
 
-const editForm = (id) => {
-  getDataJobs(id)
-  queryId('container').innerHTML = `
-  <form id=form>   
-  <label>Job title:</label>
-  <input type="text" id="name">
-  <label>Description:</label>
-  <textarea id="description"> </textarea>
-  
-    <label>Tags:</label>
-    <input type="text" id="location-form" placeholder="Location">
-    <input type="text" id="seniority-form" placeholder="Seniority">
-    <input type="text" id="category-form" placeholder="Category">
-  </div>
-  <div class="btn-form">
-  <button type="submit" id="edit" onclick="editJob(${id})">Edit</button>
-   <button><a href="index.html">Cancel</a></button>
-  </div>
-</form>`
-
-queryId('form').style.display = "block"
-}
-
 
 queryId('createJob-form').addEventListener('click', (e) => {
   e.preventDefault()
   queryId('container').innerHTML = ""
   queryId('form').style.display = 'block'
   queryId('select__search').style.display = 'none'
+  queryId('welcome').style.display='none'
 })
 
 
@@ -155,3 +151,46 @@ queryId('submit').addEventListener('click', (e) => {
   newJob()
   swal("A new job!", "", "success");
 })
+
+
+
+queryId('btn-clean').addEventListener('click', () => {
+      queryId('location').value = ""
+       queryId('seniority').value = ""
+      queryId('category').value = ""
+      queryId('container').innerHTML = ""
+      getJobs()
+})
+
+const filterResults = () => {
+  let searching = {
+    location: queryId("location").value,
+    seniority: queryId("seniority").value,
+    category: queryId("category").value,
+  };
+  console.log(searching);
+  fetch(`${URL_BASE}`)
+    .then((res) => res.json())
+    .then((data) => {
+      showJobs(
+        data.filter(
+          ({ location, seniority, category }) =>
+            location === searching.location ||
+            seniority === searching.seniority ||
+            category === searching.category
+        )
+      );
+    })
+
+    .catch((err) => console.log(err));
+};
+
+queryId("btn-search").addEventListener("click", (e) => {
+  e.preventDefault();
+  queryId("container").innerHTML = "";
+  filterResults(
+    queryId("location").value,
+    queryId("seniority").value,
+    queryId("category").value
+  );
+});

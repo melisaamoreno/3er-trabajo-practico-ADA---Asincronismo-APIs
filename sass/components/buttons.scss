@@ -1,24 +1,30 @@
 button {
   width: 70px;
   height: 30px;
-  background-color: $botton_hover;
-  border: $link_color 1px solid;
+  background-color: $titles_color;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: $link_color;
+  background-color: $botton_hover
 }
 
 .btn-details {
-  width: 80%;
+  width: 30%;
   margin: 0 auto;
   border: 1px solid $navbar_color;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 .btn-details:hover {
-  background-color: $font_color;
+  background-color: $botton_hover;
+}
+
+.details-button{
+ margin-top: 10%;
+ display: flex;
+ justify-content: center;
 }
 
 .btn-card_detail {
@@ -31,7 +37,7 @@ button:hover {
   }
 
   .btn_card:hover {
-    background-color: $font_color;
+    background-color: $botton_hover;
   }
 
   .delete {
@@ -41,4 +47,8 @@ button:hover {
   .delete:hover {
     background-color: #ff3c38;
   }
+}
+
+.edit {
+  display: none;
 }

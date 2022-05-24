@@ -8,7 +8,7 @@
     .loader{
         margin: 5px;
         padding: 2px 0px;
-        background-color: $link_color;
+        //background-color: $link_color;
         border: black 1px solid;
         border-radius: 5px;
     }
@@ -16,6 +16,8 @@
         display: flex;
         flex-direction: row;
         justify-content:center;
+        background-color: rgb(168, 168, 168);
+        float: inline-end;
     }
 }
 
