@@ -66,7 +66,7 @@ const showJobs = (jobs) => {
         
       </div>`;
   }
-  queryId("loader").style.display = "none";
+  queryId('loader').style.display = "none";
 };
 
 const showOneJob = (jobs) => {
