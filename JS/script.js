@@ -41,13 +41,15 @@ const deleteJob = (id) => {
       method: "DELETE",
   })
   .catch(err => console.log(err))
-  swal("Correctly delete", "", "success")
+  queryId('alert-container-delete').style.display = 'block'
 }
 
+
 const showJobs = (jobs) => {
-  for (const job of jobs) {
-    const { id, name, description, category, location, seniority } = job;
-    queryId("container").innerHTML += `
+  setTimeout(() => {
+    for (const job of jobs) {
+      const { id, name, description, category, location, seniority } = job;
+      queryId("container").innerHTML += `
         <div class="card">
         <h3>${name}</h3>
         <p>${description}</p>
@@ -58,13 +60,18 @@ const showJobs = (jobs) => {
         <button id="details" class="btn-details" onclick="getOneJob(${id})"> See details </button>
         </div>
       </div>`;
-  }
-  queryId("loader").style.display = "none";
+    } queryId('loader').style.display = 'none'
+  }, 2000)
 };
 
+
 const showOneJob = (jobs) => {
-  const { id,name, description, category, location, seniority, knowledge } = jobs;
-  queryId("container").innerHTML = `
+  queryId('container').innerHTML = ""
+  
+  setTimeout(() => {
+    const { id, name, description, category, location, seniority, knowledge } =
+    jobs;
+    queryId("container").innerHTML = `
   <div class="card-detail">
         <h3>${name}</h3>
         <p><b>Description:</b> ${description}</p>
@@ -77,7 +84,8 @@ const showOneJob = (jobs) => {
         <button class="btn_card delete" id="delete" onclick="showAlert(${id})">Delete job</button>
         </div>
    </div>
-  `;
+  `;queryId('loader').style.display = 'block' 
+   }, 2000);
 };
 
 
@@ -102,8 +110,8 @@ const showAlert = (id) => {
       </div>
   </div>
   </div>
-`
-}
+`}
+
 
 const editForm = (id) => {
 getDataJobs(id)
@@ -124,6 +132,7 @@ queryId('edit').addEventListener('click', (e) => {
     })
     .then(res => console.log(res.json()))
     .catch(err => console.log(err))
+    queryId('alert-container-edit').style.display = 'block'
   }
 )
 
@@ -146,21 +155,20 @@ queryId('createJob-form').addEventListener('click', (e) => {
 })
 
 
-queryId('submit').addEventListener('click', (e) => {
-  e.preventDefault()
-  newJob()
-  swal("A new job!", "", "success");
-})
+queryId("submit").addEventListener("click", (e) => {
+  e.preventDefault();
+  newJob();
+  queryId('alert-container-success').style.display = 'block'
+});
 
 
-
-queryId('btn-clean').addEventListener('click', () => {
-      queryId('location').value = ""
-       queryId('seniority').value = ""
-      queryId('category').value = ""
-      queryId('container').innerHTML = ""
-      getJobs()
-})
+queryId("btn-clean").addEventListener("click", () => {
+  queryId("location").value = "";
+  queryId("seniority").value = "";
+  queryId("category").value = "";
+  queryId("container").innerHTML = "";
+  getJobs();
+});
 
 const filterResults = () => {
   let searching = {

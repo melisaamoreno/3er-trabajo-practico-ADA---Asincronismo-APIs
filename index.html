@@ -61,7 +61,11 @@
       </div>
     </section>
       <div class="container__cards" id="container">
-        <span class="loader" id="loader">Cargando...</span>
+        <div class="leap-frog" id="loader">
+          <div class="leap-frog__dot"></div>
+          <div class="leap-frog__dot"></div>
+          <div class="leap-frog__dot"></div>
+        </div>
       </div>   
       
    
@@ -83,9 +87,36 @@
         </div>
       </form>
 
+      <!-- Alerts  -->
+      <div class="alert-container-success" id="alert-container-success">
+      <div class="alert-success" id="alert-success">
+        <h2>Success!</h2>
+        <div class="btn-form">
+          <button><a href="index.html">Ok</a></button>
+          </div>
+      </div>
+      </div>
+      
+      <div class="alert-container-delete" id="alert-container-delete">
+        <div class="alert-delete" id="alert-delete">
+          <h2>This job was deleted</h2>
+          <div class="btn-form">
+            <button><a href="index.html">Ok</a></button>
+            </div>
+        </div>
+        </div>
+
+        <div class="alert-container-edit" id="alert-container-edit">
+          <div class="alert-edit" id="alert-edit">
+            <h2>changes saved successfully</h2>
+            <div class="btn-form">
+              <button><a href="index.html">Ok</a></button>
+              </div>
+          </div>
+          </div>
+
    <footer>Made by Melisa Moreno - 2022</footer>
       <script src="./JS/script.js"></script>
-      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </body>
    
 </html>
