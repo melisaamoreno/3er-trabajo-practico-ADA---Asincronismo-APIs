@@ -47,13 +47,12 @@ const getDataJobs = (id) => {
 
 
 const deleteJob = (id) => {
-  fetch(`${URL_BASE}/${id}`, {
+fetch(`${URL_BASE}/${id}`, {
       method: "DELETE",
   })
-  .catch(err => console.log(err))
+  //.catch(err => console.log(err))
+queryId('alert-container-delete').style.display = 'block'
 }
-
-
 const showJobs = (jobs) => {
   setTimeout(() => {
     for (const job of jobs) {
@@ -115,12 +114,13 @@ const showAlert = (id) => {
   <div class="alert">
       Are you sure?
       <div class="btn-form">
-      <button onclick="deleteJob(${id})">Delete</button>
+      <button class="btn-delete" onclick="deleteJob(${id})">Delete</button>
       <button><a href="index.html">Cancel</a></button>
       </div>
   </div>
   </div>
-`}
+`
+}
 
 
 const editForm = (id) => {
