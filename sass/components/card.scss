@@ -30,3 +30,27 @@
     font-size: 15px;
 }
 }
+
+@media (min-width: 360px){
+    .card {
+        @include card ($direction: column);
+        overflow:auto;
+         p{
+             margin: 10px;
+             font-size: 15px;
+         }
+         .loader{
+             margin: 5px;
+             padding: 2px 0px;
+             border: black 1px solid;
+             border-radius: 5px;
+         }
+         .span-card{
+             display: flex;
+             flex-direction: row;
+             justify-content:center;
+             background-color: rgb(168, 168, 168);
+             float: inline-end;
+         }
+    
+  }}

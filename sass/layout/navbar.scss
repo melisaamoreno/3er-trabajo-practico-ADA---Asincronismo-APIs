@@ -22,3 +22,35 @@
     font-size: 20px;
   }
 }
+
+
+@media (max-width: 360px){
+  .nav__bar {
+    background-color: $navbar_color;
+    //padding: 20px 10px;
+    @include flex_display($direction: row, $alignment: center);
+    width: 100%;
+  
+    h1 {
+      font-size: 25px;
+      margin-left: 15px;
+      color: $titles_color;
+    }
+  }
+  
+  .nav__bar--buttons {
+    position: absolute;
+    left: 70%;
+    display: flex;
+    flex-direction: row;
+  
+    a {
+      text-decoration: none;
+      color: $titles_color;
+      margin: 15px;
+      font-size: 15px;
+
+    }
+  }
+  
+}

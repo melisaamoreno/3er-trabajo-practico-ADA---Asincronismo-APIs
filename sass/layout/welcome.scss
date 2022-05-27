@@ -14,3 +14,23 @@
         text-shadow: 4px 3px 6px rgba(50,50,50,0.78);
     }
 }
+
+@media (max-width: 360px){
+    .welcome{
+    display: flex;
+    //margin: 30px;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: $titles_color;
+
+    img {
+        width: 30%;
+    }
+    h1 {
+        font-size: 2em;
+        padding-top: 10%;
+        text-shadow: 4px 3px 6px rgba(50,50,50,0.78);
+    }
+    
+  }}
+    

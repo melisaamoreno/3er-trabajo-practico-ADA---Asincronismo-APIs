@@ -23,6 +23,33 @@
   font-size: 20px;
 }
 
+@media (max-width: 360px) {
+  .nav__bar {
+    background-color: #323232;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+  }
+  .nav__bar h1 {
+    font-size: 25px;
+    margin-left: 15px;
+    color: #E9C335;
+  }
+
+  .nav__bar--buttons {
+    position: absolute;
+    left: 70%;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav__bar--buttons a {
+    text-decoration: none;
+    color: #E9C335;
+    margin: 15px;
+    font-size: 15px;
+  }
+}
 * {
   padding: 0px;
   margin: 0px;
@@ -39,6 +66,18 @@
   height: 25px;
 }
 
+@media (max-width: 360px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+  }
+  .main select {
+    width: 90px;
+    height: 25px;
+    margin-bottom: 10px;
+  }
+}
 button {
   width: 70px;
   height: 30px;
@@ -226,6 +265,44 @@ button:hover {
   font-size: 15px;
 }
 
+@media (min-width: 360px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+    padding: 15px;
+    background-color: rgb(240, 238, 238);
+    border-radius: 10px;
+    box-sizing: content-box;
+    filter: drop-shadow(-1px 0px 5px #868585);
+    overflow: auto;
+  }
+  .card span {
+    text-align: center;
+    margin: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .card p {
+    margin: 10px;
+    font-size: 15px;
+  }
+  .card .loader {
+    margin: 5px;
+    padding: 2px 0px;
+    border: black 1px solid;
+    border-radius: 5px;
+  }
+  .card .span-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(168, 168, 168);
+    float: inline-end;
+  }
+}
 footer {
   text-align: center;
   background-color: #323232;
@@ -375,6 +452,23 @@ form button {
   font-size: 50px;
   padding-top: 10%;
   text-shadow: 4px 3px 6px rgba(50, 50, 50, 0.78);
+}
+
+@media (max-width: 360px) {
+  .welcome {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #E9C335;
+  }
+  .welcome img {
+    width: 30%;
+  }
+  .welcome h1 {
+    font-size: 2em;
+    padding-top: 10%;
+    text-shadow: 4px 3px 6px rgba(50, 50, 50, 0.78);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

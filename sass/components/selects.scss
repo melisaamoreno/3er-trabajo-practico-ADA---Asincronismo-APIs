@@ -7,3 +7,18 @@
         height: 25px;
     }
 }
+
+
+@media (max-width: 360px){
+
+    .main {
+        display: flex;
+        justify-content: center;
+        margin: 15px;
+         select {
+             width: 90px;
+             height: 25px;
+             margin-bottom: 10px;
+         }
+     }
+}

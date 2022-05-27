@@ -2,6 +2,16 @@ const URL_BASE = "https://627448703d2b5100742a6b67.mockapi.io/jobs";
 const queryId = (id) => document.getElementById(id);
 let editId = 0
 
+const spinner = () => {
+  queryId('container').innerHTML = ` 
+  <div class="leap-frog" id="loader">
+  <div class="leap-frog__dot"></div>
+  <div class="leap-frog__dot"></div>
+  <div class="leap-frog__dot"></div>
+</div>
+`
+}
+
 const getJobs = () => {
   fetch(`${URL_BASE}`)
     .then((res) => res.json())
@@ -41,7 +51,6 @@ const deleteJob = (id) => {
       method: "DELETE",
   })
   .catch(err => console.log(err))
-  queryId('alert-container-delete').style.display = 'block'
 }
 
 
@@ -67,7 +76,7 @@ const showJobs = (jobs) => {
 
 const showOneJob = (jobs) => {
   queryId('container').innerHTML = ""
-  
+  spinner()
   setTimeout(() => {
     const { id, name, description, category, location, seniority, knowledge } =
     jobs;
@@ -84,8 +93,9 @@ const showOneJob = (jobs) => {
         <button class="btn_card delete" id="delete" onclick="showAlert(${id})">Delete job</button>
         </div>
    </div>
-  `;queryId('loader').style.display = 'block' 
-   }, 2000);
+  `;
+}, 2000);
+queryId('select__search').style.display = 'none'
 };
 
 
@@ -167,10 +177,13 @@ queryId("btn-clean").addEventListener("click", () => {
   queryId("seniority").value = "";
   queryId("category").value = "";
   queryId("container").innerHTML = "";
+  setTimeout(() => {
+    spinner()
+  }, 2000);
   getJobs();
 });
 
-const filterResults = () => {
+const filterResults = () => {  
   let searching = {
     location: queryId("location").value,
     seniority: queryId("seniority").value,
@@ -194,11 +207,14 @@ const filterResults = () => {
 };
 
 queryId("btn-search").addEventListener("click", (e) => {
+  setTimeout(() => {
+    
   e.preventDefault();
   queryId("container").innerHTML = "";
   filterResults(
     queryId("location").value,
     queryId("seniority").value,
     queryId("category").value
-  );
+  ); spinner()
+}, 2000);
 });
