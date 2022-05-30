@@ -80,6 +80,7 @@ const showOneJob = (jobs) => {
     const { id, name, description, category, location, seniority, knowledge } =
     jobs;
     queryId("container").innerHTML = `
+  
   <div class="card-detail">
         <h3>${name}</h3>
         <p><b>Description:</b> ${description}</p>
@@ -90,7 +91,8 @@ const showOneJob = (jobs) => {
         <div class="btn-card_detail">
         <button class="btn_card" onclick="editForm(${id})">Edit job</button>
         <button class="btn_card delete" id="delete" onclick="showAlert(${id})">Delete job</button>
-        </div>
+        </div> 
+        <span class="back"><a href="index.html"><< Back<span></a>
    </div>
   `;
 }, 2000);
